@@ -7,7 +7,7 @@ module Layouts
         head do
           title { "Protos" }
           meta name: "viewport", content: "width=device-width,initial-scale=1"
-          vite_client_tag
+          vite_client_tag unless ENV["RACK_ENV"] == "production"
           vite_javascript_tag "application"
         end
 
