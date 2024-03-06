@@ -23,6 +23,8 @@ class Builder
   private
 
   def listener
+    call
+
     Listen.to("app") do
       puts "Rebuilding..."
       self.class.loader.reload

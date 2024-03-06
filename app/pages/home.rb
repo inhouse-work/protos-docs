@@ -12,7 +12,7 @@ module Pages
         )
       ) do
         page_title { "Protos Components" }
-        div(class: "grid sm:grid-cols-2 md:grid-cols-3 gap-sm") do
+        div do
           feature("Typography") { typography }
           feature("Buttons") { buttons }
           feature("Badges") { badges }
@@ -49,9 +49,14 @@ module Pages
     end
 
     def feature(title, &block)
-      section(class: "border border-base-100 p-sm overflow-x-scroll") do
+      section(
+        id: title.downcase,
+        class: "border border-base-100 p-sm overflow-x-scroll"
+      ) do
         h2(class: "mb-sm") { title }
-        div(class: "rounded-box p-sm grid place-items-center", &block)
+        div(class: "relative rounded-box p-sm grid place-items-center min-h-[350px]") do
+          div(class: "mx-auto", &block)
+        end
       end
     end
 

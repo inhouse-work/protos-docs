@@ -2,10 +2,21 @@ module Components
   class Popovers < Component
     def template
       render Protos::Popover.new do |popover|
-        render popover.trigger(class: "btn btn-primary") { "Open Popover" }
-        render popover.content(class: "rounded-box border p-sm mt-sm bg-base-100") do
-          p { "This is the popover content." }
+        render popover.content(theme: { container: "transition-all" }) do
+          ul(class: "menu border rounded-box") do
+            li do
+              a(href: "#") { "Item 1" }
+            end
+            li do
+              a(href: "#") { "Item 2" }
+            end
+            li do
+              a(href: "#") { "Item 3" }
+            end
+          end
         end
+
+        render popover.trigger(class: "btn btn-primary") { "Open Popover" }
       end
     end
   end

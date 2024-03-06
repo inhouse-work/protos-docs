@@ -19,7 +19,7 @@
   },
   "dependencies": {
     "@fontsource-variable/inter": "^5.0.17",
-    "protos-stimulus": "^0.0.1",
+    "protos-stimulus": "^0.0.2",
     "vite-plugin-full-reload": "^1.1.0"
   }
 }

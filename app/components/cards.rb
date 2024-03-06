@@ -5,7 +5,7 @@ module Components
     def template
       render Protos::Card.new(
         border: true,
-        class: "bg-base-content text-neutral"
+        class: "bg-base-content text-neutral max-w-[300px]"
       ) do |card|
         render card.image do
           img(
