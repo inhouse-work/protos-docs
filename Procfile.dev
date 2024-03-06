@@ -1,0 +1,3 @@
+server: bin/bundle exec rackup
+builder: LISTEN_GEM_DEBUGGING=debug bin/rake watch
+vite: bin/vite dev

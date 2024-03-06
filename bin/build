@@ -1,0 +1,11 @@
+#!/usr/bin/env ruby
+# frozen_string_literal: true
+
+require "bundler/setup"
+require "./config/boot"
+
+ENV["RACK_ENV"] = "production"
+ENV["RAILS_ENV"] = "production"
+
+system "bin/vite build"
+Builder.new.call
