@@ -1,6 +1,6 @@
 # frozen_string_literal: true
 
-module Components
+module Features
   class Typography < Component
     def template
       ul(class: "flex flex-col gap-xs") do

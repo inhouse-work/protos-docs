@@ -1,4 +1,4 @@
-module Components
+module Features
   class Heroes < Component
     include Protos::Typography
 

@@ -1,4 +1,4 @@
-module Components
+module Features
   class Tabs < Component
     def template
       render Protos::Tabs.new do |tabs|

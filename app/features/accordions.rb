@@ -1,6 +1,6 @@
 # frozen_string_literal: true
 
-module Components
+module Features
   class Accordions < Component
     def template
       render Protos::Accordion.new do |accordion|

@@ -1,4 +1,4 @@
-module Components
+module Features
   class Stats < Component
     def template
       render Protos::Stats.new do |stats|

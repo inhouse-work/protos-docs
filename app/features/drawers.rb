@@ -1,4 +1,4 @@
-module Components
+module Features
   class Drawers < Component
     def template
       render Protos::Drawer.new(id: "some_id") do |drawer|

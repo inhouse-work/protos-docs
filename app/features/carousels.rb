@@ -1,4 +1,4 @@
-module Components
+module Features
   class Carousels < Component
     def template
       render Protos::Carousel.new(

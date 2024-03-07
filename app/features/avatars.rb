@@ -1,6 +1,6 @@
 # frozen_string_literal: true
 
-module Components
+module Features
   class Avatars < Component
     def template
       div(class: "flex gap-sm items-center") do

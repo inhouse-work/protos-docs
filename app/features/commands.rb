@@ -1,4 +1,4 @@
-module Components
+module Features
   class Commands < Component
     def template
       render Protos::Command.new do |command|

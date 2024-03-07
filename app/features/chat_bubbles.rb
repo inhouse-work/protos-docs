@@ -1,4 +1,4 @@
-module Components
+module Features
   class ChatBubbles < Component
     def template
       ul class: "space-y-md" do

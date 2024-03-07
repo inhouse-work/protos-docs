@@ -1,6 +1,6 @@
 # frozen_string_literal: true
 
-module Components
+module Features
   class Cards < Component
     def template
       render Protos::Card.new(

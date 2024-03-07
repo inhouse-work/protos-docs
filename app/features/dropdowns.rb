@@ -1,4 +1,4 @@
-module Components
+module Features
   class Dropdowns < Component
     def template
       render Protos::Dropdown.new do |dropdown|

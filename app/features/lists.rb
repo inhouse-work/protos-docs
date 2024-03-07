@@ -1,4 +1,4 @@
-module Components
+module Features
   class Lists < Component
     def template
       render Protos::List.new do |list|

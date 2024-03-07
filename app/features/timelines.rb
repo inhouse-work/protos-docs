@@ -1,4 +1,4 @@
-module Components
+module Features
   class Timelines < Component
     def template
       events = [

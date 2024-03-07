@@ -1,4 +1,4 @@
-module Components
+module Features
   class Tables < Component
     def template
       render Protos::Table.new do |table|

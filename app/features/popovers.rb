@@ -1,4 +1,4 @@
-module Components
+module Features
   class Popovers < Component
     def template
       render Protos::Popover.new do |popover|

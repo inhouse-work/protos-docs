@@ -1,4 +1,4 @@
-module Components
+module Features
   class Modals < Component
     def template
       render Protos::Modal.new do |modal|

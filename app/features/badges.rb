@@ -1,6 +1,6 @@
 # frozen_string_literal: true
 
-module Components
+module Features
   class Badges < Component
     def template
       ul(class: "flex flex-wrap gap-sm") do

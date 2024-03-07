@@ -1,6 +1,6 @@
 # frozen_string_literal: true
 
-module Components
+module Features
   class Alerts < Component
     def template
       render Protos::Alert.new do |_alert|

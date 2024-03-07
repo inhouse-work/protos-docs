@@ -1,4 +1,4 @@
-module Components
+module Features
   class Collapses < Component
     def template
       render Protos::Collapse.new(class: "border") do |collapse|

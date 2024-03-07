@@ -1,4 +1,4 @@
-module Components
+module Features
   class Breadcrumbs < Component
     def template
       render Protos::Breadcrumbs.new do |crumbs|

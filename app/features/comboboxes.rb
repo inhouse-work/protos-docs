@@ -1,4 +1,4 @@
-module Components
+module Features
   class Comboboxes < Component
     def template
       render Protos::Combobox.new do |combobox|

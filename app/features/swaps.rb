@@ -1,4 +1,4 @@
-module Components
+module Features
   class Swaps < Component
     def template
       render Protos::Swap.new do |swap|
