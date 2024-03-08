@@ -1,5 +1,7 @@
-PATH
-  remote: ..
+GIT
+  remote: https://github.com/inhouse-work/protos.git
+  revision: 433b4f6e59685fdf594de6ad2dec98df52f502b4
+  branch: master
   specs:
     protos (0.2.0)
       dry-core (~> 1.0)
