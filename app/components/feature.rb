@@ -6,27 +6,12 @@ module Components
 
     param :name
     option :inflector, default: -> { Dry::Inflector.new }
-    option :formatter, default: -> { Rouge::Formatters::HTML.new }
-    option :lexer, default: -> { Rouge::Lexers::Ruby.new }
 
     def template
       section(**attrs) do
         header(class: "flex justify-between gap-sm") do
           h2 { name }
-          nav(class: "flex gap-2") do
-            button(
-              class: "btn",
-              data: { action: "feature#openCode" }
-            ) do
-              "Code"
-            end
-            button(
-              class: "btn",
-              data: { action: "feature#openVisual" }
-            ) do
-              "Example"
-            end
-          end
+          toggle_button
         end
         div(class: css[:feature]) do
           div(
@@ -36,27 +21,30 @@ module Components
             render Object.const_get(class_name).new
           end
 
-          pre(
-            class: "overflow-x-auto hidden w-full",
-            data: { feature_target: "code" }
-          ) do
-            code(class: "highlight block bg-base-200 p-sm rounded-box") do
-              unsafe_raw highlighted_code
-            end
-          end
+          render Components::Code.new(filepath)
         end
       end
     end
 
     private
 
-    def highlighted_code
-      code = File.read(
-        "app/features/#{underscored_name}.rb"
-      )
+    def toggle_button
+      render Protos::Swap.new(
+        class: "btn",
+        data_action: "click->feature#toggle"
+      ) do |swap|
+        render swap.on do
+          "Example"
+        end
 
-      lexed = lexer.lex(code)
-      formatter.format(lexed)
+        render swap.off do
+          "Code"
+        end
+      end
+    end
+
+    def filepath
+      "app/features/#{underscored_name}.rb"
     end
 
     def default_attrs

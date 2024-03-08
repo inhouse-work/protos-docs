@@ -1,4 +1,6 @@
-
+.highlight, .highlight .w {
+  color: #abb2bf;
+}
 .highlight .err {
   color: #282c34;
   background-color: #e06c75;
