@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 module Features
   class Dropdowns < Component
     def template

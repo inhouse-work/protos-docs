@@ -1,8 +1,12 @@
+# frozen_string_literal: true
+
 module Features
   class Comboboxes < Component
     def template
       render Protos::Combobox.new do |combobox|
-        render(combobox.trigger(class: "btn btn-primary")) { "Select an option" }
+        render(combobox.trigger(class: "btn btn-primary")) do
+          "Select an option"
+        end
         render combobox.content do
           render combobox.list(class: "border rounded-box bg-base-300") do
             render combobox.input(placeholder: "Search...")

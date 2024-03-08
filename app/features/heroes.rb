@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 module Features
   class Heroes < Component
     include Protos::Typography

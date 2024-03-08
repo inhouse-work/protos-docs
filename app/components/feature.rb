@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 module Components
   class Feature < Component
     include Protos::Typography

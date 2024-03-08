@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 class Icon < Component
   param :name, reader: false
   option :variant, reader: false, default: -> {}

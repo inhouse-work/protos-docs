@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 module Features
   class Lists < Component
     def template

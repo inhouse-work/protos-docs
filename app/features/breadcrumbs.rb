@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 module Features
   class Breadcrumbs < Component
     def template

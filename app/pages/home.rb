@@ -32,33 +32,34 @@ module Pages
 
     def template
       render Layouts::Site.new(
-        class: tokens(
-          "bg-base-300",
-          "min-h-screen",
-          "pt-md",
-          "space-y-md"
-        )
+        class: css[:layout]
       ) do
         page_title { "Protos Components" }
 
-        render Protos::Drawer.new(id: "main-drawer", class: "md:drawer-open") do |drawer|
-          render drawer.content do
-            render drawer.trigger(
-              class: "fixed bottom-sm z-10 btn btn-primary md:hidden"
-            ) do
-              icon("bars-3")
-            end
-            features
-          end
-
-          render drawer.side do
-            sidebar
-          end
-        end
+        content
       end
     end
 
     private
+
+    def content
+      render Protos::Drawer.new(
+        id: "main-drawer",
+        class: "md:drawer-open"
+      ) do |drawer|
+        render drawer.content do
+          render drawer.trigger(class: css[:trigger]) do
+            icon("bars-3")
+          end
+
+          features
+        end
+
+        render drawer.side do
+          sidebar
+        end
+      end
+    end
 
     def features
       ul(class: "mx-auto") do
@@ -71,17 +72,7 @@ module Pages
     end
 
     def sidebar
-      aside(class: "relative w-[200px] h-full bg-base-100") do
-        nav do
-          ul(class: "menu overflow-y-scroll flex-nowrap") do
-            FEATURES.each do |name|
-              li do
-                a(href: "##{name.downcase}") { name }
-              end
-            end
-          end
-        end
-      end
+      render Components::Sidebar.new(FEATURES)
     end
 
     def page_title(&block)
@@ -90,6 +81,27 @@ module Pages
         class: "mx-sm mb-sm",
         &block
       )
+    end
+
+    def theme
+      {
+        layout: tokens(
+          "bg-base-300",
+          "min-h-screen",
+          "pt-md",
+          "space-y-md"
+        ),
+        trigger: tokens(
+          "fixed",
+          "bottom-sm",
+          "left-sm",
+          "z-10",
+          "btn",
+          "btn-primary",
+          "shadow-md",
+          "md:hidden"
+        )
+      }
     end
   end
 end
