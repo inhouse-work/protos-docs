@@ -33,9 +33,9 @@ module Pages
     def template
       render Layouts::Site.new(
         class: tokens(
-          "p-sm",
           "bg-base-300",
           "min-h-screen",
+          "pt-md",
           "space-y-md"
         )
       ) do
@@ -85,7 +85,11 @@ module Pages
     end
 
     def page_title(&block)
-      render Protos::Typography::Heading.new(size: :xl, class: "mb-sm"), &block
+      render Protos::Typography::Heading.new(
+        size: :xl,
+        class: "mx-sm mb-sm",
+        &block
+      )
     end
   end
 end

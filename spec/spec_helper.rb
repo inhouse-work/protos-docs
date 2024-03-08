@@ -3,6 +3,8 @@
 require "./config/boot"
 Bundler.require(:test)
 
+require "phlex/testing/capybara"
+
 RSpec.configure do |config|
   config.expect_with :rspec do |expectations|
     expectations.include_chain_clauses_in_custom_matcher_descriptions = true

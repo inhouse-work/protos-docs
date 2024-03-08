@@ -19,6 +19,7 @@
   },
   "dependencies": {
     "@fontsource-variable/inter": "^5.0.17",
+    "@hotwired/stimulus": "^3.2.2",
     "protos-stimulus": "^0.0.2",
     "vite-plugin-full-reload": "^1.1.0"
   }
