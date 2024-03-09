@@ -22,8 +22,17 @@ module Components
 
     def theme
       {
-        container: tokens("relative", "w-[200px]", "h-full", "bg-base-100"),
-        list: tokens("menu", "overflow-y-scroll", "flex-nowrap")
+        container: tokens(
+          "relative",
+          "w-[200px]",
+          "h-full",
+          "bg-base-300"
+        ),
+        list: tokens(
+          "menu",
+          "overflow-y-scroll",
+          "flex-nowrap"
+        )
       }
     end
   end

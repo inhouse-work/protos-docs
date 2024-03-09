@@ -45,7 +45,7 @@ module Pages
     def content
       render Protos::Drawer.new(
         id: "main-drawer",
-        class: "md:drawer-open"
+        class: "md:drawer-open border-y"
       ) do |drawer|
         render drawer.content do
           render drawer.trigger(class: css[:trigger]) do
@@ -62,7 +62,7 @@ module Pages
     end
 
     def features
-      ul(class: "mx-auto") do
+      ul(class: css[:list]) do
         FEATURES.each do |name|
           li do
             render Components::Feature.new(name)
@@ -78,19 +78,13 @@ module Pages
     def page_title(&block)
       render Protos::Typography::Heading.new(
         size: :xl,
-        class: "mx-sm mb-sm",
+        class: "px-sm py-md",
         &block
       )
     end
 
     def theme
       {
-        layout: tokens(
-          "bg-base-300",
-          "min-h-screen",
-          "pt-md",
-          "space-y-md"
-        ),
         trigger: tokens(
           "fixed",
           "bottom-sm",
@@ -100,7 +94,8 @@ module Pages
           "btn-primary",
           "shadow-md",
           "md:hidden"
-        )
+        ),
+        list: tokens("mx-auto", "divide-y")
       }
     end
   end

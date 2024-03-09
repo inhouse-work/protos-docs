@@ -65,16 +65,13 @@ module Components
     def theme
       {
         container: tokens(
-          "border",
-          "border-base-100",
-          "p-sm",
-          "overflow-x-scroll",
-          "space-y-sm"
+          "overflow-x-auto",
+          "space-y-sm",
+          "p-md"
         ),
         feature: tokens(
           "relative",
           "rounded-box",
-          "p-sm",
           "grid",
           "place-items-center",
           "min-h-[350px]"

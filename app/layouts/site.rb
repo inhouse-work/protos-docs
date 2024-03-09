@@ -3,7 +3,7 @@
 module Layouts
   class Site < Layout
     def template(&block)
-      html do
+      html lang: "en-US", data: { theme: "onedark" } do
         head do
           title { "Protos" }
           meta name: "viewport", content: "width=device-width,initial-scale=1"

@@ -29,7 +29,7 @@ module Components
     def theme
       {
         container: tokens("overflow-x-auto", "hidden", "w-full"),
-        code: tokens("highlight", "block", "bg-base-200", "p-sm", "rounded-box")
+        code: tokens("highlight", "block", "bg-base-300", "p-sm", "rounded-box")
       }
     end
   end
