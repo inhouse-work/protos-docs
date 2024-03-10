@@ -1,6 +1,6 @@
 GIT
   remote: https://github.com/inhouse-work/protos.git
-  revision: 5e7da6b6064d17482078bf27cc3d9099a849352c
+  revision: ff5f4ee8dca5dca87c90db539a3040445a690613
   branch: master
   specs:
     protos (0.2.1)
