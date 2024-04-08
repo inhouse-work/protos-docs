@@ -6,7 +6,7 @@ module Features
       render Protos::Modal.new do |c|
         c.trigger(class: "btn btn-primary") { "Open Modal" }
         c.dialog do
-          p { "This is the modal content." }
+          span { "This is the modal content." }
           c.close_button(class: "btn") { "Close" }
         end
       end

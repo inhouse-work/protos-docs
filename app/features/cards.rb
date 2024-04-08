@@ -7,17 +7,10 @@ module Features
         border: true,
         class: "bg-base-content text-neutral max-w-[300px]"
       ) do |c|
-        c.image do
-          img(
-            src: image_url,
-            alt: "Placeholder Image"
-          )
-        end
+        c.image { img(src: image_url, alt: "Placeholder Image") }
         c.body do
           c.title { "Card Title" }
-          p do
-            "This is the card body"
-          end
+          span { "This is the card body" }
         end
       end
     end

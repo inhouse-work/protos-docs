@@ -11,30 +11,19 @@ module Features
         c.dialog do
           c.list do
             c.input(placeholder: "Search...")
-
             c.empty { "No results found" }
 
             c.group do
               c.title { "Suggestions" }
-              c.item do
-                a(href: "#") { "Calendar" }
-              end
-              c.item do
-                a(href: "#") { "Search Emoji" }
-              end
+              c.item { a(href: "#") { "Calendar" } }
+              c.item { a(href: "#") { "Search Emoji" } }
             end
 
             c.group do
               c.title { "Settings" }
-              c.item do
-                a(href: "#") { "Profile" }
-              end
-              c.item do
-                a(href: "#") { "Mail" }
-              end
-              c.item do
-                a(href: "#") { "Settings" }
-              end
+              c.item { a(href: "#") { "Profile" } }
+              c.item { a(href: "#") { "Mail" } }
+              c.item { a(href: "#") { "Settings" } }
             end
           end
         end

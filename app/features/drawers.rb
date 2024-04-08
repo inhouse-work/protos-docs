@@ -9,13 +9,26 @@ module Features
         end
 
         c.side(class: "z-[999]") do
-          ul(class: "menu p-4 w-80 min-h-full bg-base-200 text-base-content") do
-            li do
-              a { "Main Menu" }
-            end
+          ul(class: css[:menu]) do
+            li { a { "Main Menu" } }
           end
         end
       end
+    end
+
+    private
+
+    def theme
+      {
+        menu: tokens(
+          "menu",
+          "p-4",
+          "w-80",
+          "min-h-full",
+          "bg-base-200",
+          "text-base-content"
+        )
+      }
     end
   end
 end
