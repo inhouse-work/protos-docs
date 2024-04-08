@@ -2,7 +2,7 @@
 
 module Features
   class Buttons < Component
-    def template
+    def view_template
       ul(class: "flex flex-wrap gap-sm") do
         li do
           button(class: "btn") { "Button" }

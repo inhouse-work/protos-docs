@@ -2,13 +2,13 @@
 
 module Features
   class Swaps < Component
-    def template
-      render Protos::Swap.new do |swap|
-        render swap.on do
+    def view_template
+      render Protos::Swap.new do |c|
+        c.on do
           icon("check-circle", size: :lg)
         end
 
-        render swap.off do
+        c.off do
           icon("x-circle", size: :lg)
         end
       end

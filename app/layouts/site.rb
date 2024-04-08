@@ -2,7 +2,7 @@
 
 module Layouts
   class Site < Layout
-    def template(&block)
+    def view_template(&block)
       html lang: "en_US", data: { theme: "onedark" } do
         head do
           title { "Protos UI components" }

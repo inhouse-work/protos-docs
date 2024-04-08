@@ -30,7 +30,7 @@ module Pages
       "Toasts"
     ].freeze
 
-    def template
+    def view_template
       render Layouts::Site.new(
         class: css[:layout]
       ) do
@@ -47,15 +47,15 @@ module Pages
         id: "main-drawer",
         class: "md:drawer-open border-y"
       ) do |drawer|
-        render drawer.content do
-          render drawer.trigger(class: css[:trigger]) do
+        drawer.content do
+          drawer.trigger(class: css[:trigger]) do
             icon("bars-3")
           end
 
           features
         end
 
-        render drawer.side do
+        drawer.side do
           sidebar
         end
       end

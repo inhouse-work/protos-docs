@@ -4,7 +4,7 @@ module Components
     option :formatter, default: -> { Rouge::Formatters::HTML.new }
     option :lexer, default: -> { Rouge::Lexers::Ruby.new }
 
-    def template
+    def view_template
       pre(**attrs) do
         code(class: css[:code]) do
           unsafe_raw highlighted_code

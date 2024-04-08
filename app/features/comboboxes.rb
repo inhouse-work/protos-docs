@@ -2,21 +2,21 @@
 
 module Features
   class Comboboxes < Component
-    def template
-      render Protos::Combobox.new do |combobox|
-        render(combobox.trigger(class: "btn btn-primary")) do
+    def view_template
+      render Protos::Combobox.new do |c|
+        c.trigger(class: "btn btn-primary") do
           "Select an option"
         end
-        render combobox.content do
-          render combobox.list(class: "border rounded-box bg-base-300") do
-            render combobox.input(placeholder: "Search...")
-            render(combobox.empty) { "No results found" }
-            render combobox.group do
-              render(combobox.title) { "Quick links" }
-              render combobox.item do
+        c.content do
+          c.list(class: "border rounded-box bg-base-300") do
+            c.input(placeholder: "Search...")
+            c.empty { "No results found" }
+            c.group do
+              c.title { "Quick links" }
+              c.item do
                 a(href: "#") { "Calendar" }
               end
-              render combobox.item do
+              c.item do
                 a(href: "#") { "Projects" }
               end
             end

@@ -2,7 +2,7 @@
 
 module Features
   class Typography < Component
-    def template
+    def view_template
       ul(class: "flex flex-col gap-xs") do
         li do
           render Protos::Typography::Heading.new(size: :xl) do

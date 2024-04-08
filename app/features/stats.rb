@@ -2,19 +2,19 @@
 
 module Features
   class Stats < Component
-    def template
-      render Protos::Stats.new do |stats|
-        render stats.stat do
-          render(stats.title) { "Total orders" }
-          render(stats.value) { "1,200" }
+    def view_template
+      render Protos::Stats.new do |c|
+        c.stat do
+          c.title { "Total orders" }
+          c.value { "1,200" }
         end
-        render stats.stat do
-          render(stats.title) { "Total sales" }
-          render(stats.value) { "$1,200.00" }
+        c.stat do
+          c.title { "Total sales" }
+          c.value { "$1,200.00" }
         end
-        render stats.stat do
-          render(stats.title) { "Avg. order value" }
-          render(stats.value) { "$1.00" }
+        c.stat do
+          c.title { "Avg. order value" }
+          c.value { "$1.00" }
         end
       end
     end

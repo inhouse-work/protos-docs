@@ -1,5 +1,5 @@
 PATH
-  remote: ..
+  remote: ../protos
   specs:
     protos (0.3.0)
       dry-core (~> 1.0)

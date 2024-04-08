@@ -7,7 +7,7 @@ module Components
     param :name
     option :inflector, default: -> { Dry::Inflector.new }
 
-    def template
+    def view_template
       section(**attrs) do
         header(class: "flex justify-between gap-sm") do
           h2 { name }
@@ -33,11 +33,11 @@ module Components
         class: "btn",
         data_action: "click->feature#toggle"
       ) do |swap|
-        render swap.on do
+        swap.on do
           "Example"
         end
 
-        render swap.off do
+        swap.off do
           "Code"
         end
       end

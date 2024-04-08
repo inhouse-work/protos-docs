@@ -2,33 +2,32 @@
 
 module Features
   class Tables < Component
-    def template
-      render Protos::Table.new do |table|
-        render(table.caption) { "Table Caption" }
-        render table.header do
-          render table.row do
-            render(table.head) { "Name" }
-            render(table.head) { "Age" }
-            render(table.head) { "Status" }
-            render(table.head) { "Location" }
+    def view_template
+      render Protos::Table.new do |c|
+        c.caption { "Table Caption" }
+        c.header do
+          c.row do
+            c.head { "Name" }
+            c.head { "Age" }
+            c.head { "Status" }
+            c.head { "Location" }
           end
         end
-        render table.body do
-          render table.row do
-            render(table.cell) { "John Doe" }
-            render(table.cell) { "28" }
-            render(table.cell) do
+
+        c.body do
+          c.row do
+            c.cell { "John Doe" }
+            c.cell { "28" }
+            c.cell do
               span(class: "badge badge-info") { "Active" }
             end
-            render(table.cell) { "North Pole" }
+            c.cell { "North Pole" }
           end
-          render table.row do
-            render(table.cell) { "Jane Smith" }
-            render(table.cell) { "33" }
-            render(table.cell) do
-              span(class: "badge badge-info") { "Active" }
-            end
-            render(table.cell) { "South Pole" }
+          c.row do
+            c.cell { "Jane Smith" }
+            c.cell { "33" }
+            c.cell { span(class: "badge badge-info") { "Active" } }
+            c.cell { "South Pole" }
           end
         end
       end

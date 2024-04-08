@@ -2,7 +2,7 @@
 
 module Features
   class Badges < Component
-    def template
+    def view_template
       ul(class: "flex flex-wrap gap-sm") do
         li do
           span(class: "badge") { "Badge" }

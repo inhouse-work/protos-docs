@@ -4,7 +4,7 @@ module Components
   class Sidebar < Component
     param :features
 
-    def template
+    def view_template
       aside(**attrs) do
         nav do
           ul(class: css[:list]) do

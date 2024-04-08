@@ -2,9 +2,10 @@
 
 module Features
   class Popovers < Component
-    def template
-      render Protos::Popover.new do |popover|
-        render popover.content(theme: { container: "transition-all" }) do
+    def view_template
+      render Protos::Popover.new do |c|
+        c.trigger(class: "btn btn-primary") { "Open Popover" }
+        c.content(theme: { container: "transition-all" }) do
           ul(class: "menu border rounded-box") do
             li do
               a(href: "#") { "Item 1" }
@@ -17,8 +18,6 @@ module Features
             end
           end
         end
-
-        render popover.trigger(class: "btn btn-primary") { "Open Popover" }
       end
     end
   end

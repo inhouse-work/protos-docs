@@ -2,7 +2,7 @@
 
 module Features
   class Avatars < Component
-    def template
+    def view_template
       div(class: "flex gap-sm items-center") do
         with_placeholder
         with_image
@@ -27,8 +27,8 @@ module Features
         class: "text-base-100",
         shape: :circle,
         theme: { figure: "p-sm bg-base-content" }
-      ) do |avatar|
-        avatar.plain("NT")
+      ) do |c|
+        c.plain("NT")
       end
     end
   end

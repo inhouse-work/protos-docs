@@ -2,17 +2,11 @@
 
 module Features
   class Tabs < Component
-    def template
-      render Protos::Tabs.new do |tabs|
-        render tabs.tab("tabs", label: "Tab 1") do
-          div(class: css[:item]) { "Content 1" }
-        end
-        render tabs.tab("tabs", label: "Tab 2") do
-          div(class: css[:item]) { "Content 2" }
-        end
-        render tabs.tab("tabs", label: "Tab 3") do
-          div(class: css[:item]) { "Content 3" }
-        end
+    def view_template
+      render Protos::Tabs.new do |c|
+        c.tab(id: "tabs", label: "Tab 1", class: css[:item]) { "Content 1" }
+        c.tab(id: "tabs", label: "Tab 2", class: css[:item]) { "Content 2" }
+        c.tab(id: "tabs", label: "Tab 3", class: css[:item]) { "Content 3" }
       end
     end
 
