@@ -1,13 +1,3 @@
-PATH
-  remote: ../protos
-  specs:
-    protos (0.3.0)
-      dry-core (~> 1.0)
-      dry-initializer (~> 3.1)
-      dry-types (~> 1.7)
-      phlex (~> 1.10)
-      tailwind_merge (~> 0.10)
-
 GEM
   remote: https://rubygems.org/
   specs:
@@ -97,6 +87,12 @@ GEM
     phlex-testing-capybara (0.1.0)
       capybara (~> 3.38)
       phlex (>= 0.5)
+    protos (0.4.1)
+      dry-core (~> 1.0)
+      dry-initializer (~> 3.1)
+      dry-types (~> 1.7)
+      phlex (~> 1.10)
+      tailwind_merge (~> 0.10)
     protos-icon (0.2.0)
       phlex (~> 1.10)
     psych (5.1.2)
@@ -119,7 +115,7 @@ GEM
     rdoc (6.6.3.1)
       psych (>= 4.0.0)
     regexp_parser (2.9.0)
-    reline (0.5.0)
+    reline (0.5.1)
       io-console (~> 0.5)
     rexml (3.2.6)
     roda (3.78.0)
@@ -210,7 +206,7 @@ DEPENDENCIES
   listen
   phlex
   phlex-testing-capybara
-  protos!
+  protos
   protos-icon
   rack
   rackup
