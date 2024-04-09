@@ -2,42 +2,19 @@
 
 module Features
   class Typography < Component
+    include Protos::Typography
+    # This will override h1-h4 + p and add inline_a
+
     def view_template
-      ul(class: "flex flex-col gap-xs") do
+      ul class: "flex flex-col gap-xs" do
+        li { h1(size: :xl) { "XL Hello, world!" } }
+        li { h2(size: :lg) { "XL Hello, world!" } }
+        li { h3(size: :md) { "Hello, world!" } }
+        li { h4(size: :sm) { "Hello, world!" } }
+        li { h4(size: :xs) { "Hello, world!" } }
         li do
-          render Protos::Typography::Heading.new(size: :xl) do
-            "XL Hello, world!"
-          end
-        end
-
-        li do
-          render Protos::Typography::Heading.new(size: :lg) do
-            "LG Hello, world!"
-          end
-        end
-
-        li do
-          render Protos::Typography::Heading.new(size: :md) do
-            "MD Hello, world!"
-          end
-        end
-
-        li do
-          render Protos::Typography::Heading.new(size: :sm) do
-            "SM Hello, world!"
-          end
-        end
-
-        li do
-          render Protos::Typography::Heading.new(size: :xs) do
-            "XS Hello, world!"
-          end
-        end
-
-        li do
-          render Protos::Typography::Paragraph.new do
-            "This is some paragraph text"
-          end
+          plain "This is some paragraph text "
+          inline_a(href: "https://example.com") { "with an inline link" }
         end
       end
     end

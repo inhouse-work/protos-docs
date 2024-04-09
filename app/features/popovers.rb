@@ -7,15 +7,9 @@ module Features
         c.trigger(class: "btn btn-primary") { "Open Popover" }
         c.content(theme: { container: "transition-all" }) do
           ul(class: "menu border rounded-box") do
-            li do
-              a(href: "#") { "Item 1" }
-            end
-            li do
-              a(href: "#") { "Item 2" }
-            end
-            li do
-              a(href: "#") { "Item 3" }
-            end
+            li { a(href: "#") { "Item 1" } }
+            li { a(href: "#") { "Item 2" } }
+            li { a(href: "#") { "Item 3" } }
           end
         end
       end

@@ -13,10 +13,7 @@ module Features
 
         c.crumb { a(href: "#") { "Accounts" } }
         c.crumb { a(href: "#") { "Joe" } }
-
-        c.crumb do
-          plain("Edit")
-        end
+        c.crumb { "Edit" }
       end
     end
   end
