@@ -10,7 +10,7 @@ module Features
         end
         c.stat do
           c.title { "Total sales" }
-          c.value { "$1,200.00" }
+          c.value { "$1,200" }
         end
         c.stat do
           c.title { "Avg. order value" }

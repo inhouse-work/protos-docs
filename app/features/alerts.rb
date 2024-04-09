@@ -11,8 +11,8 @@ module Features
         plain "Hello world"
 
         c.actions do
-          button(class: "btn btn-primary btn-sm") do
-            icon("x-circle")
+          button(class: "btn btn-primary btn-sm btn-circle") do
+            icon("x-circle", variant: :outline)
           end
         end
       end

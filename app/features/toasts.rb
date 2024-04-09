@@ -11,7 +11,7 @@ module Features
           plain("Hey, how's it going?")
           alert.actions(class: "inline-flex") do
             toast.close_button do
-              icon("x-circle")
+              icon("x-circle", variant: :outline)
             end
           end
         end
