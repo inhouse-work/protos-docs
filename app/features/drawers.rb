@@ -2,20 +2,33 @@
 
 module Features
   class Drawers < Component
-    def template
-      render Protos::Drawer.new(id: "some_id") do |drawer|
-        render drawer.content do
-          render drawer.trigger(class: "btn btn-primary") { "Open Drawer" }
+    def view_template
+      render Protos::Drawer.new(id: "some_id") do |c|
+        c.content do
+          c.trigger(class: "btn btn-primary") { "Open Drawer" }
         end
 
-        render drawer.side(class: "z-[999]") do
-          ul(class: "menu p-4 w-80 min-h-full bg-base-200 text-base-content") do
-            li do
-              a { "Main Menu" }
-            end
+        c.side(class: "z-[999]") do
+          ul(class: css[:menu]) do
+            li { a { "Main Menu" } }
           end
         end
       end
+    end
+
+    private
+
+    def theme
+      {
+        menu: tokens(
+          "menu",
+          "p-4",
+          "w-80",
+          "min-h-full",
+          "bg-base-200",
+          "text-base-content"
+        )
+      }
     end
   end
 end

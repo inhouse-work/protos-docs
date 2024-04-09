@@ -2,15 +2,13 @@
 
 module Features
   class Carousels < Component
-    def template
+    def view_template
       render Protos::Carousel.new(
         class: "rounded-box",
         snap_to: :end
-      ) do |carousel|
+      ) do |c|
         images.each do |image|
-          render carousel.item do
-            img(src: image, alt: "Random image")
-          end
+          c.item { img(src: image, alt: "Random image") }
         end
       end
     end

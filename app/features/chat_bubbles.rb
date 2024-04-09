@@ -2,21 +2,19 @@
 
 module Features
   class ChatBubbles < Component
-    def template
+    def view_template
       ul class: "space-y-md" do
         li do
-          render Protos::ChatBubble.new do |bubbles|
-            render bubbles.content do
-              plain("Hey, how's it going?")
-            end
+          render Protos::ChatBubble.new do |c|
+            c.header { "Robert A. Caro" }
+            c.content { "Hey, how's it going?" }
           end
         end
 
         li do
-          render Protos::ChatBubble.new(align: :end) do |bubbles|
-            render bubbles.content(type: :primary) do
-              plain("Pretty good, you?")
-            end
+          render Protos::ChatBubble.new(align: :end) do |c|
+            c.header { "You" }
+            c.content(type: :primary) { "Pretty good, you?" }
           end
         end
       end

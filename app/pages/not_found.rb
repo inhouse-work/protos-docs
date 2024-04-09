@@ -2,7 +2,7 @@
 
 module Pages
   class NotFound < Page
-    def template
+    def view_template
       render Layouts::Site.new do
         h1 { "Page not found." }
       end

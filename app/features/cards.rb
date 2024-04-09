@@ -2,22 +2,15 @@
 
 module Features
   class Cards < Component
-    def template
+    def view_template
       render Protos::Card.new(
         border: true,
         class: "bg-base-content text-neutral max-w-[300px]"
-      ) do |card|
-        render card.image do
-          img(
-            src: image_url,
-            alt: "Placeholder Image"
-          )
-        end
-        render card.body do
-          render(card.title) { "Card Title" }
-          p do
-            "This is the card body"
-          end
+      ) do |c|
+        c.image { img(src: image_url, alt: "Placeholder Image") }
+        c.body do
+          c.title { "Card Title" }
+          span { "This is the card body" }
         end
       end
     end

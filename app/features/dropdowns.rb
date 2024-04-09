@@ -2,12 +2,12 @@
 
 module Features
   class Dropdowns < Component
-    def template
-      render Protos::Dropdown.new do |dropdown|
-        render dropdown.trigger(class: "btn btn-primary") { "Open" }
-        render dropdown.menu(class: "w-52") do
-          render(dropdown.item) { a { "Item 1" } }
-          render(dropdown.item) { a { "Item 2" } }
+    def view_template
+      render Protos::Dropdown.new do |c|
+        c.trigger(class: "btn btn-primary") { "Open" }
+        c.menu(class: "w-52") do
+          c.item { a { "Item 1" } }
+          c.item { a { "Item 2" } }
         end
       end
     end

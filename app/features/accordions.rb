@@ -2,16 +2,16 @@
 
 module Features
   class Accordions < Component
-    def template
-      render Protos::Accordion.new do |accordion|
-        render accordion.item(class: "border") do
-          render(accordion.title) { "Accordion Item 1" }
-          render(accordion.content) { "Accordion Item 1 Content" }
+    def view_template
+      render Protos::Accordion.new do |c|
+        c.item(class: "border") do
+          c.title { "Accordion Item 1" }
+          c.content { "Accordion Item 1 Content" }
         end
 
-        render accordion.item(class: "border") do
-          render(accordion.title) { "Accordion Item 2" }
-          render(accordion.content) { "Accordion Item 2 Content" }
+        c.item(class: "border") do
+          c.title { "Accordion Item 2" }
+          c.content { "Accordion Item 2 Content" }
         end
       end
     end
