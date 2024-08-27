@@ -32,26 +32,30 @@
       10.6px 16.1px 18.1px -2.5px oklch(var(--shadow-color) / 0.34),
       18.7px 28.4px 31.9px -3.1px oklch(var(--shadow-color) / 0.29),
       30.7px 46.6px 52.3px -3.7px oklch(var(--shadow-color) / 0.23);
+    --navbar-height: 64px;
+    --main-scene: calc(100vh - var(--navbar-height));
+    --viewport-padding: var(--spacing-md);
   }
 
   body {
     @apply bg-base-400;
   }
 
+  .prose pre {
+    @apply bg-base-300 border;
+  }
+
   * {
-    scrollbar-width: thin;
     scrollbar-color: theme("colors.base-200") theme("colors.base-300");
     border-color: theme("colors.base-200");
   }
 
   /* Chrome, Edge, and Safari */
   *::-webkit-scrollbar {
-    width: 0.66rem;
     background: theme("colors.base-300")
   }
 
   *::-webkit-scrollbar-track {
     background: theme("colors.base-200");
-    border-radius: 0px;
   }
 }

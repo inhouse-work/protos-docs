@@ -1,0 +1,2 @@
+class ApplicationComponent < Component
+end

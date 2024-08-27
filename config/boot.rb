@@ -3,12 +3,15 @@
 ENV["RACK_ENV"] ||= "development"
 
 require "bundler"
-Bundler.require(:default, :development)
+Bundler.require(:default, ENV.fetch("RACK_ENV", nil))
+
+require_relative "staticky"
 
 loader = Zeitwerk::Loader.new
+loader.inflector.inflect("ui" => "UI")
 loader.push_dir("lib")
-loader.push_dir("app")
-loader.enable_reloading
+loader.push_dir("app/views")
 loader.setup
 
-Builder.loader = loader
+require_relative "site"
+require_relative "routes"

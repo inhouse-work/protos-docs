@@ -5,7 +5,7 @@ class Icon < Component
   option :variant, reader: false, default: -> {}
   option :size, default: -> { :md }, reader: false
 
-  def view_template
+  def template
     div(**attrs) do
       render Protos::Icon.heroicon(@name, variant:)
     end

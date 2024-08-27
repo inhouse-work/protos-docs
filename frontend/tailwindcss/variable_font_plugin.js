@@ -1,5 +1,6 @@
 // This is a custom plugin for Tailwind CSS to enable font-variation-settings
-const plugin = require("tailwindcss/plugin");
+import plugin from "tailwindcss/plugin";
+
 const fontVariationSettings = plugin(function ({ addUtilities }) {
   addUtilities({
     ".font-thin": {
@@ -99,4 +100,4 @@ const fontVariationSettings = plugin(function ({ addUtilities }) {
   });
 });
 
-module.exports = fontVariationSettings;
+export default fontVariationSettings;

@@ -1,13 +1,18 @@
 # frozen_string_literal: true
 
-require "./config/boot"
+require "vite_ruby"
 
-desc "Build the site"
-task :build do
-  Builder.new.call
+ViteRuby.install_tasks
+
+desc "Precompile assets"
+task :environment do
+  require "./config/boot"
 end
 
-desc "Continuously build the site"
-task :watch do
-  Builder.new.watch
+namespace :site do
+  desc "Precompile assets"
+  task build: :environment do
+    Rake::Task["vite:build"].invoke
+    Staticky.builder.call
+  end
 end
