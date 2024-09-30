@@ -1,10 +1,10 @@
 # frozen_string_literal: true
 
 module Errors
-  class NotFound < Page
+  class NotFound < ApplicationView
     include Protos::Typography
 
-    def self.layout = Layouts::Error
+    def around_template(&block) = Layouts::Error.new(&block)
 
     def view_template
       h1 { "Page not found." }

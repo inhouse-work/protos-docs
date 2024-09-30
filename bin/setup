@@ -13,6 +13,12 @@ FileUtils.chdir APP_ROOT do
   # This script is idempotent, so that you can run it at any time and get an expectable outcome.
   # Add necessary setup steps to this file.
 
-  puts "== Running rubocop =="
-  system! "bundle exec rubocop --autocorrect-all --fail-level error"
+  puts "== Installing dependencies =="
+  system! "gem install bundler --conservative"
+  system("bundle check") || system!("bundle install")
+
+  system! "bundle binstubs --force bundler rubocop rspec-core vite_ruby rake"
+
+  puts "\n== Installing javascript dependencies =="
+  system! "pnpm install"
 end

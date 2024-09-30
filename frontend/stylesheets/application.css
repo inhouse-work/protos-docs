@@ -37,7 +37,7 @@
     --viewport-padding: var(--spacing-md);
   }
 
-  body {
+  html[data-theme="onedark"] {
     @apply bg-base-400;
   }
 

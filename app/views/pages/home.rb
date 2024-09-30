@@ -1,7 +1,7 @@
 # frozen_string_literal: true
 
 module Pages
-  class Home < Page
+  class Home < ApplicationView
     FEATURES = [
       "Typography",
       "Buttons",
@@ -29,14 +29,6 @@ module Pages
       "Tabs",
       "Toasts"
     ].freeze
-
-    def around_template(&block)
-      render Layouts::Site.new(
-        class: css[:layout],
-      ) do |site|
-        site.with_content(&block)
-      end
-    end
 
     def view_template
       page_title { "Protos Components" }

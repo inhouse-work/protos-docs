@@ -13,7 +13,6 @@ gem "protos-markdown"
 gem "dry-inflector"
 gem "front_matter_parser"
 gem "rack"
-gem "rackup"
 gem "rake"
 gem "rouge"
 gem "staticky", github: "nolantait/staticky", branch: "master"
@@ -28,6 +27,8 @@ group :test do
 end
 
 group :development do
-  gem "rerun"
+  gem "filewatcher", require: false
+  gem "puma"
+  gem "rubocop"
   gem "rubocop-inhouse", require: false
 end

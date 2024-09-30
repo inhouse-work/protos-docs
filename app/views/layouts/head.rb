@@ -1,7 +1,7 @@
 # frozen_string_literal: true
 
 module Layouts
-  class Head < Component
+  class Head < ApplicationComponent
     option :title, default: -> { ::Site.title }, reader: false
     option :description, default: -> { ::Site.description }, reader: false
 
@@ -11,7 +11,7 @@ module Layouts
         meta name: "description", content: @description
         meta charset: "utf-8"
         meta name: "viewport",
-             content: "width=device-width,initial-scale=1,viewport-fit=cover"
+          content: "width=device-width,initial-scale=1,viewport-fit=cover"
         meta name: "turbo-cache-control", content: "no-preview"
         meta name: "turbo-refresh-method", content: "morph"
         meta name: "turbo-refresh-scroll", content: "preserve"
@@ -25,13 +25,13 @@ module Layouts
         link rel: "canonical", href: ::Site.url_for(helpers.current_path)
         link rel: "apple-touch-icon", href: "/apple-touch-icon.png"
         link rel: "icon",
-             type: "image/png",
-             sizes: "32x32",
-             href: "/favicon-32x32.png"
+          type: "image/png",
+          sizes: "32x32",
+          href: "/favicon-32x32.png"
         link rel: "icon",
-             type: "image/png",
-             sizes: "16x16",
-             href: "/favicon-16x16.png"
+          type: "image/png",
+          sizes: "16x16",
+          href: "/favicon-16x16.png"
         link rel: "manifest", href: "/site.webmanifest"
 
         meta property: "og:title", content: @title
