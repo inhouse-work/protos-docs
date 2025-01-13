@@ -31,7 +31,7 @@ module Pages
     ].freeze
 
     def view_template
-      page_title { "Protos Components" }
+      h1(class: "py-md px-sm") { "Protos Components" }
       content
     end
 
@@ -60,7 +60,9 @@ module Pages
       ul(class: css[:list]) do
         FEATURES.each do |name|
           li do
-            render Components::Feature.new(name)
+            render Components::Stage.new(name) do
+              render Components::Feature.new(name)
+            end
           end
         end
       end
@@ -68,14 +70,6 @@ module Pages
 
     def sidebar
       render UI::Sidebar.new(FEATURES)
-    end
-
-    def page_title(&block)
-      render Protos::Typography::Heading.new(
-        size: :xl,
-        class: "px-sm py-md",
-        &block
-      )
     end
 
     def theme

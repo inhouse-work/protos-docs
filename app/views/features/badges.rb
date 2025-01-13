@@ -4,13 +4,27 @@ module Features
   class Badges < ApplicationComponent
     def view_template
       ul(class: "flex flex-wrap gap-sm") do
-        li { span(class: "badge") { "Badge" } }
-        li { span(class: "badge badge-primary") { "Primary Badge" } }
-        li { span(class: "badge badge-secondary") { "Secondary Badge" } }
-        li { span(class: "badge badge-info") { "Info Badge" } }
-        li { span(class: "badge badge-success") { "Success Badge" } }
-        li { span(class: "badge badge-warning") { "Warning Badge" } }
-        li { span(class: "badge badge-error") { "Error Badge" } }
+        li {
+          render(Protos::Badge.new { "Badge" })
+        }
+        li {
+          render(Protos::Badge.new(type: :primary) { "Primary Badge" })
+        }
+        li {
+          render(Protos::Badge.new(type: :secondary) { "Secondary Badge" })
+        }
+        li {
+          render(Protos::Badge.new(type: :info) { "Info Badge" })
+        }
+        li {
+          render(Protos::Badge.new(type: :success) { "Success Badge" })
+        }
+        li {
+          render(Protos::Badge.new(type: :warning) { "Warning Badge" })
+        }
+        li {
+          render(Protos::Badge.new(type: :error) { "Error Badge" })
+        }
       end
     end
   end

@@ -1,6 +1,8 @@
+# frozen_string_literal: true
+
 module Components
   class Code < Component
-    param :filepath
+    param :code, reader: false
     option :formatter, default: -> { Rouge::Formatters::HTML.new }
     option :lexer, default: -> { Rouge::Lexers::Ruby.new }
 
@@ -15,21 +17,14 @@ module Components
     private
 
     def highlighted_code
-      code = File.read(filepath)
-      lexed = lexer.lex(code)
+      lexed = lexer.lex(@code)
       formatter.format(lexed)
-    end
-
-    def default_attrs
-      {
-        data: { feature_target: "code" }
-      }
     end
 
     def theme
       {
-        container: tokens("overflow-x-auto", "hidden", "w-full"),
-        code: tokens("highlight", "block", "bg-base-300", "p-sm", "rounded-box")
+        container: %w[overflow-x-auto w-full],
+        code: %w[highlight block bg-base-300 p-sm rounded-box]
       }
     end
   end

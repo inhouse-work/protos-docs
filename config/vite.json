@@ -2,7 +2,9 @@
   "all": {
     "publicDir": "build",
     "sourceCodeDir": "frontend",
-    "watchAdditionalPaths": []
+    "additionalEntrypoints": [
+      "~/{images,stylesheets}/**/*"
+    ]
   },
   "development": {
     "autoBuild": true,

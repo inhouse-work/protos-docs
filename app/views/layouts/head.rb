@@ -45,6 +45,8 @@ module Layouts
         meta name: "twitter:creator", content: ::Site.twitter
 
         vite_client_tag unless ENV["RACK_ENV"] == "production"
+        stylesheet_tag "stylesheets/site"
+        stylesheet_tag "stylesheets/syntax"
         javascript_tag "application"
 
         script(
@@ -61,6 +63,10 @@ module Layouts
 
     def javascript_tag(...)
       vite_javascript_tag(...)
+    end
+
+    def stylesheet_tag(...)
+      vite_stylesheet_tag(...)
     end
   end
 end

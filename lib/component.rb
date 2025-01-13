@@ -4,6 +4,7 @@ require "staticky/phlex/view_helpers"
 
 class Component < Protos::Component
   include ViteHelpers
+  include Protos::Typography
 
   class NullViewContext
     def root? = true

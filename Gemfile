@@ -6,7 +6,7 @@ git_source(:github) { |repo| "https://github.com/#{repo}.git" }
 ruby_version = Pathname.new(__dir__).join(".ruby-version")
 ruby ruby_version.read.strip
 
-gem "protos", github: "inhouse-work/protos", branch: "master"
+gem "protos", path: "../protos"
 gem "protos-icon"
 gem "protos-markdown"
 
