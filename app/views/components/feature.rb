@@ -7,25 +7,15 @@ module Components
     def view_template
       div(**attrs) do
         render Demo.new(name)
-        render Code.new(name, class: "hidden")
+        render FeatureCode.new(name, class: "hidden w-full")
       end
     end
 
     private
 
-    def default_attrs
-      {
-        id: name.downcase
-      }
-    end
-
     def theme
       {
-        container: %w[
-          overflow-x-auto
-          space-y-sm
-          p-md
-        ]
+        container: %w[grid place-items-center w-full]
       }
     end
   end

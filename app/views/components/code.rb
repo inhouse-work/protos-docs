@@ -16,6 +16,12 @@ module Components
 
     private
 
+    def default_attrs
+      {
+        data: { feature_target: "code" }
+      }
+    end
+
     def highlighted_code
       lexed = lexer.lex(@code)
       formatter.format(lexed)
