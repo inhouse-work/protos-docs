@@ -1,9 +1,9 @@
 GIT
   remote: https://github.com/inhouse-work/protos.git
-  revision: ec1cd40254bcaa530fcc7e2806b831a3d0dad17b
+  revision: 867eba23ae688618338d4f1da45ae8be215530dd
   branch: master
   specs:
-    protos (0.6.0)
+    protos (0.7.0)
       dry-core (~> 1.0)
       dry-initializer (~> 3.1)
       dry-types (~> 1.7)
