@@ -1,13 +1,15 @@
 # frozen_string_literal: true
 
 class Icon < Component
+  include Protos::Icon
+
   param :name, reader: false
-  option :variant, reader: false, default: -> {}
+  option :variant, reader: false, default: -> { }
   option :size, default: -> { :md }, reader: false
 
-  def template
+  def view_template
     div(**attrs) do
-      render Protos::Icon.heroicon(@name, variant:)
+      icon(@name, variant:)
     end
   end
 
@@ -15,8 +17,8 @@ class Icon < Component
 
   def variant
     @variant || {
-      xs: :micro,
-      sm: :mini,
+      xs: :solid,
+      sm: :solid,
       md: :solid,
       lg: :solid
     }.fetch(@size)

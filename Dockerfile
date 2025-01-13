@@ -1,5 +1,5 @@
 # Use an official Ruby runtime based on Alpine as a parent image
-FROM ruby:3.3-alpine AS builder
+FROM ruby:3.4.1-alpine AS builder
 
 ENV RACK_ENV="production" \
     NODE_ENV="production" \
@@ -13,8 +13,8 @@ RUN gem update --system --no-document && \
 # Install necessary packages including Node.js and Yarn
 RUN apk add --no-cache build-base git curl npm
 
-ARG NODE_VERSION=22.6.0
-ARG YARN_VERSION=4.4.0
+ARG NODE_VERSION=23.5.0
+ARG PNPM_VERSION=4.4.0
 
 # Install Node.js and Yarn
 RUN apk add --no-cache bash curl build-base \
@@ -22,7 +22,7 @@ RUN apk add --no-cache bash curl build-base \
     && /tmp/node-build-master/bin/node-build "${NODE_VERSION}" /usr/local/node \
     && npm install -g corepack \
     && corepack enable \
-    && corepack prepare yarn@$YARN_VERSION --activate \
+    corepack prepare pnpm@$PNPM_VERSION --activate && \
     && rm -rf /tmp/node-build-master
 
 ENV PATH=/usr/local/node/bin:$PATH
@@ -31,7 +31,7 @@ ENV PATH=/usr/local/node/bin:$PATH
 WORKDIR /app
 
 # Copy Gemfile and other necessary files
-COPY --link Gemfile Gemfile.lock .ruby-version package.json yarn.lock .yarnrc.yml ./
+COPY --link Gemfile Gemfile.lock .ruby-version package.json pnpm-lock.yaml  ./
 
 # Install dependencies
 RUN bundle install && \
