@@ -8,14 +8,27 @@ desc "Precompile assets"
 task :environment do
   require "./config/boot"
 
+  Staticky.configure do |config|
+    config.env = ENV.fetch("RACK_ENV", "development").to_sym
+  end
+
   Staticky.application.monitor(:builder, methods: %i[call]) do |event|
     Staticky.logger.info "Built site in #{event[:time]}ms"
   end
 end
 
 namespace :site do
+  desc "Build the site assets"
+  task :build_assets do
+    next unless Staticky.env.production?
+
+    Staticky.logger.info "Precompiling assets..."
+
+    Rake::Task["vite:build"].execute
+  end
+
   desc "Build the site and its assets into the Staticky.build_path (./build)"
-  task build: :environment do
+  task build: %i[environment build_assets] do
     Staticky.logger.info "Building site in #{Staticky.env.name} environment..."
     Staticky.builder.call
   end

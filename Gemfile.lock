@@ -12,7 +12,7 @@ GIT
 
 GIT
   remote: https://github.com/nolantait/staticky.git
-  revision: ea7ed6ce909802adad2ff636bd2b29acca87e633
+  revision: 40c5d2faeded83239edd655d9d922db3c3562ad1
   branch: master
   specs:
     staticky (0.3.2)
