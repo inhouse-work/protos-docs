@@ -17,6 +17,12 @@ module Components
 
     private
 
+    def default_attrs
+      {
+        data: { controller: "feature" }
+      }
+    end
+
     def toggle_button
       render Protos::Swap.new(
         class: "btn",

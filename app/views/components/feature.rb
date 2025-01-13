@@ -15,8 +15,7 @@ module Components
 
     def default_attrs
       {
-        id: name.downcase,
-        data: { controller: "feature" }
+        id: name.downcase
       }
     end
 
