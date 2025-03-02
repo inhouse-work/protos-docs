@@ -22,17 +22,17 @@ module UI
 
     def theme
       {
-        container: tokens(
-          "relative",
-          "w-[200px]",
-          "h-full"
-        ),
-        list: tokens(
-          "menu",
-          "overflow-y-scroll",
-          "flex-nowrap",
-          "bg-base-300"
-        )
+        container: %w[
+          relative
+          w-[200px]
+          h-full
+        ],
+        list: %w[
+          menu
+          overflow-y-scroll
+          flex-nowrap
+          bg-base-300
+        ]
       }
     end
   end

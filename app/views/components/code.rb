@@ -9,7 +9,7 @@ module Components
     def view_template
       pre(**attrs) do
         code(class: css[:code]) do
-          unsafe_raw highlighted_code
+          raw safe(highlighted_code)
         end
       end
     end

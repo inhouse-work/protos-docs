@@ -13,12 +13,12 @@ module Features
 
     def theme
       {
-        item: tokens(
-          "rounded-box",
-          "border",
-          "p-sm",
-          "bg-base-100"
-        )
+        item: %w[
+          rounded-box
+          border
+          p-sm
+          bg-base-100
+        ]
       }
     end
   end

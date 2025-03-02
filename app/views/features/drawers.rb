@@ -20,14 +20,14 @@ module Features
 
     def theme
       {
-        menu: tokens(
-          "menu",
-          "p-4",
-          "w-80",
-          "min-h-full",
-          "bg-base-200",
-          "text-base-content"
-        )
+        menu: %w[
+          menu
+          p-4
+          w-80
+          min-h-full
+          bg-base-200
+          text-base-content
+        ]
       }
     end
   end

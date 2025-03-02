@@ -5,7 +5,7 @@ git_source(:github) { |repo| "https://github.com/#{repo}.git" }
 
 ruby file: ".ruby-version"
 
-gem "protos", github: "inhouse-work/protos", branch: "master"
+gem "protos"
 gem "protos-icon"
 gem "protos-markdown"
 
@@ -21,7 +21,6 @@ gem "zeitwerk"
 group :test do
   gem "capybara", require: false
   gem "debug"
-  gem "phlex-testing-capybara"
   gem "rspec"
 end
 

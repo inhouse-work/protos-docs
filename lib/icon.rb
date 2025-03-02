@@ -35,7 +35,7 @@ class Icon < Component
 
   def theme
     {
-      container: tokens(size, "opacity-90", "inline-block")
+      container: [size, "opacity-90", "inline-block"]
     }
   end
 end

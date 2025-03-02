@@ -74,7 +74,7 @@ module Pages
 
     def theme
       {
-        trigger: tokens(
+        trigger: [
           "fixed",
           "bottom-sm",
           "left-sm",
@@ -83,8 +83,8 @@ module Pages
           "btn-primary",
           "shadow-md",
           "md:hidden"
-        ),
-        list: tokens("mx-auto", "divide-y")
+        ],
+        list: "mx-auto divide-y"
       }
     end
   end
