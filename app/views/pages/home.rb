@@ -6,6 +6,7 @@ module Pages
       "Typography",
       "Buttons",
       "Badges",
+      "Statuses",
       "Comboboxes",
       "Commands",
       "Drawers",
