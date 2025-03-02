@@ -1,14 +1,10 @@
 import { defineConfig } from "vite"
 import RubyPlugin from "vite-plugin-ruby"
-import FullReload from "vite-plugin-full-reload"
+import tailwindcss from "@tailwindcss/vite"
 
 export default defineConfig({
-  server: { hmr: false },
   plugins: [
+    tailwindcss(),
     RubyPlugin(),
-    FullReload(
-      "build/index.html",
-      { delay: 500 }
-    ),
   ],
 })
