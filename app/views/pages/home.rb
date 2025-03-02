@@ -10,6 +10,7 @@ module Pages
       "Commands",
       "Drawers",
       "Modals",
+      "Diffs",
       "Dropdowns",
       "Accordions",
       "Alerts",
