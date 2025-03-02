@@ -14,7 +14,7 @@ module UI
 
     def theme
       {
-        container: "flex justify-center w-full py-lg text-center"
+        container: "flex justify-center w-full py-lg text-center bg-base-300"
       }
     end
   end

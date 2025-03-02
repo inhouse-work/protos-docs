@@ -7,7 +7,7 @@ module Components
     def view_template(&)
       section(**attrs) do
         header(class: "flex justify-between gap-sm") do
-          h2 { @title }
+          h2(id: @title.downcase.gsub(/\s/, "-")) { @title }
           toggle_button
         end
 

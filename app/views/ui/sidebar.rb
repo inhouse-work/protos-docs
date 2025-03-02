@@ -9,8 +9,10 @@ module UI
         nav do
           ul(class: css[:list]) do
             features.each do |name|
+              id = name.downcase.gsub(/\s/, "-")
+
               li do
-                a(href: "##{name.downcase}") { name }
+                a(href: "##{id}") { name }
               end
             end
           end
@@ -24,7 +26,6 @@ module UI
       {
         container: %w[
           relative
-          w-[200px]
           h-full
         ],
         list: %w[

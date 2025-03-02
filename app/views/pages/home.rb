@@ -33,7 +33,9 @@ module Pages
     ].freeze
 
     def view_template
-      h1(class: "py-md px-sm") { "Protos Components" }
+      header(class: "py-md px-sm bg-base-300") do
+        h1 { "Protos Components" }
+      end
       content
     end
 
