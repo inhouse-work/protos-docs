@@ -17,7 +17,7 @@ module Features
     private
 
     def badge(type: :default, &)
-      render(Protos::Badge.new(type: type, &))
+      render Protos::Badge.new(type: type, &)
     end
   end
 end

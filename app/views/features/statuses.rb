@@ -17,7 +17,7 @@ module Features
     private
 
     def status(type: :default, &)
-      render(Protos::Status.new(type: type, &))
+      render Protos::Status.new(type: type, &)
     end
   end
 end
