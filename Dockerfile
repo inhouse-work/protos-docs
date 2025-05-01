@@ -1,5 +1,5 @@
 # Use an official Ruby runtime based on Alpine as a parent image
-FROM ruby:3.4.1-alpine AS base
+FROM ruby:3.4.2-alpine AS base
 
 # Set the working directory across stages
 WORKDIR /app
