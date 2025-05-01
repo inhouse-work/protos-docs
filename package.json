@@ -13,18 +13,18 @@
   "dependencies": {
     "@fontsource-variable/inter": "^5.2.5",
     "@hotwired/stimulus": "^3.2.2",
-    "@hotwired/turbo": "^8.0.12",
+    "@hotwired/turbo": "^8.0.13",
     "@tailwindcss/typography": "^0.5.16",
-    "@tailwindcss/vite": "^4.0.9",
-    "daisyui": "^5.0.0",
+    "@tailwindcss/vite": "^4.1.5",
+    "daisyui": "^5.0.35",
     "protos-stimulus": "^0.1.0",
-    "tailwindcss": "^4.0.9",
-    "vite": "^6.2.0",
+    "tailwindcss": "^4.1.5",
+    "vite": "^6.3.4",
     "vite-plugin-full-reload": "^1.2.0",
     "vite-plugin-ruby": "^5.1.1"
   },
   "optionalDependencies": {
-    "@rollup/rollup-linux-arm64-musl": "4.34.9"
+    "@rollup/rollup-linux-arm64-musl": "4.40.1"
   },
-  "packageManager": "pnpm@10.5.2+sha512.da9dc28cd3ff40d0592188235ab25d3202add8a207afbedc682220e4a0029ffbff4562102b9e6e46b4e3f9e8bd53e6d05de48544b0c57d4b0179e22c76d1199b"
+  "packageManager": "pnpm@10.10.0+sha512.d615db246fe70f25dcfea6d8d73dee782ce23e2245e3c4f6f888249fb568149318637dca73c2c5c8ef2a4ca0d5657fb9567188bfab47f566d1ee6ce987815c39"
 }
