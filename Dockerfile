@@ -24,8 +24,8 @@ RUN apk add --no-cache \
 
 FROM prebuild AS node
 
-ARG NODE_VERSION=23.5.0
-ARG PNPM_VERSION=10.4.1
+ARG NODE_VERSION=23.10.0
+ARG PNPM_VERSION=10.10.0
 ENV PATH=/usr/local/node/bin:$PATH
 # Install Node.js and Yarn
 RUN  curl -sL https://github.com/nodenv/node-build/archive/master.tar.gz | tar xz -C /tmp/ \
