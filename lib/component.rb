@@ -12,7 +12,7 @@ class Component < Protos::Component
   end
 
   def helpers
-    @_view_context ||= NullViewContext.new # rubocop:disable Naming/MemoizedInstanceVariableName
+    context[:helpers] ||= NullViewContext.new
   end
 
   def asset_path(...)
