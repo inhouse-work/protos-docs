@@ -8,7 +8,7 @@ module Features
 
         c.dialog do
           c.list do
-            c.input(placeholder: "Search...")
+            c.input(placeholder: "Search...") { icon("magnifying-glass") }
             c.empty { "No results found" }
 
             c.group do

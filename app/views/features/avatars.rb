@@ -5,16 +5,17 @@ module Features
     def view_template
       div(class: "flex gap-sm items-center") do
         with_placeholder
-        with_image
+        with_image(indicator: :online, shape: :circle)
+        with_image(indicator: :offline, shape: :squircle)
       end
     end
 
     private
 
-    def with_image
+    def with_image(indicator:, shape:)
       render Protos::Avatar.new(
-        indicator: "online",
-        shape: "circle",
+        indicator:,
+        shape:,
         theme: { figure: "bg-base-content text-neutral w-12" }
       ) do |c|
         c.img(src: "https://i.pravatar.cc/300", alt: "NT")

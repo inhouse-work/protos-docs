@@ -9,7 +9,7 @@ module Features
         end
         c.content do
           c.list(class: "border rounded-box bg-base-300") do
-            c.input(placeholder: "Search...")
+            c.input(placeholder: "Search...") { icon("magnifying-glass") }
             c.empty { "No results found" }
             c.group do
               c.title { "Quick links" }
