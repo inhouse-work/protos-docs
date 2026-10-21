@@ -1,5 +1,5 @@
 # Use an official Ruby runtime based on Alpine as a parent image
-FROM ruby:3.4.2-alpine AS base
+FROM ruby:4.0.6-alpine AS base
 
 # Set the working directory across stages
 WORKDIR /app
@@ -24,8 +24,8 @@ RUN apk add --no-cache \
 
 FROM prebuild AS node
 
-ARG NODE_VERSION=23.10.0
-ARG PNPM_VERSION=10.10.0
+ARG NODE_VERSION=26.7.0
+ARG PNPM_VERSION=12.14.0
 ENV PATH=/usr/local/node/bin:$PATH
 # Install Node.js and Yarn
 RUN  curl -sL https://github.com/nodenv/node-build/archive/master.tar.gz | tar xz -C /tmp/ \
