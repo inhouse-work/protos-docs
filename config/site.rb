@@ -9,7 +9,7 @@ module Site
 
   def description
     "Protos is an open-source UI component library for Ruby. Browse 30+ " \
-      "accessible, copy-paste-ready components built with Phlex, Tailwind CSS " \
+      "accessible components built with Phlex, Tailwind CSS " \
       "and DaisyUI."
   end
 
