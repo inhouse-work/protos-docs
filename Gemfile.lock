@@ -1,4 +1,15 @@
 GIT
+  remote: https://github.com/inhouse-work/protos.git
+  revision: 8982aca71710cc50252e5c842969616f76446c33
+  branch: master
+  specs:
+    protos (1.1.0)
+      dry-initializer (~> 3.2)
+      dry-types (~> 1.8)
+      phlex (~> 2)
+      tailwind_merge (~> 1)
+
+GIT
   remote: https://github.com/nolantait/staticky.git
   revision: 53a248ef2fcdde23ad801be810360d87040bb4a7
   branch: master
@@ -161,11 +172,6 @@ GEM
       prettyprint
     prettyprint (0.2.1)
     prism (1.9.0)
-    protos (1.0.1)
-      dry-initializer (~> 3.2)
-      dry-types (~> 1.8)
-      phlex (~> 2)
-      tailwind_merge (~> 1)
     protos-icon (1.0.0)
       dry-inflector (~> 1)
       phlex (~> 2)
@@ -314,7 +320,7 @@ DEPENDENCIES
   dry-inflector
   filewatcher
   front_matter_parser
-  protos
+  protos!
   protos-icon
   protos-markdown
   puma

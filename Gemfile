@@ -5,7 +5,7 @@ git_source(:github) { |repo| "https://github.com/#{repo}.git" }
 
 ruby file: ".ruby-version"
 
-gem "protos"
+gem "protos", github: "inhouse-work/protos", branch: "master"
 gem "protos-icon"
 gem "protos-markdown"
 
