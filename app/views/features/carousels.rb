@@ -8,8 +8,8 @@ module Features
           class: "rounded-box h-96",
           snap_to: :center
         ) do |c|
-          images.each do |image|
-            c.item { img(src: image, alt: "Random image") }
+          images.each_with_index do |image, index|
+            c.item { img(src: image, alt: "Example carousel image #{index + 1}") }
           end
 
           c.actions do

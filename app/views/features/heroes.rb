@@ -11,7 +11,7 @@ module Features
       ) do |c|
         c.overlay(class: "opacity-90")
         c.content do
-          h1(class: "text-white") { "Hello, world!" }
+          h2(size: :xl, class: "text-white") { "Hello, world!" }
         end
       end
     end

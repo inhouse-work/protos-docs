@@ -4,7 +4,7 @@ class ApplicationLayout < ApplicationComponent
   def around_template
     doctype
     html lang: "en", data: { theme: "onedark" } do
-      render Layouts::Head.new(&head)
+      render Layouts::Head.new(**head_options)
 
       body do
         yield
@@ -16,4 +16,9 @@ class ApplicationLayout < ApplicationComponent
   def view_template(&block)
     main(**attrs, &block)
   end
+
+  private
+
+  # Override in layouts or views that need different document metadata.
+  def head_options = {}
 end

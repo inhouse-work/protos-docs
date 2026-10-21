@@ -5,7 +5,8 @@ module UI
     def view_template
       footer(**attrs) do
         p(class: "opacity-80 text-sm") do
-          "All rights reserved. © #{Time.now.year}"
+          plain "All rights reserved. © #{Time.now.year} #{Site.author} · "
+          link_to("GitHub", Site.repository_url, class: "link")
         end
       end
     end

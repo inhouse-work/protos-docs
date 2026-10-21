@@ -4,7 +4,12 @@ module Errors
   class ServiceError < ApplicationView
     include Protos::Typography
 
-    def around_template(&block) = Layouts::Error.new(&block)
+    def around_template(&block)
+      render Layouts::Error.new(
+        title: "Something went wrong | #{Site.name}",
+        &block
+      )
+    end
 
     def view_template
       h1 { "Something went wrong." }

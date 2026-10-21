@@ -27,8 +27,15 @@ namespace :site do
     Rake::Task["vite:build"].execute
   end
 
+  desc "Generate the sitemap from the site's routes"
+  task sitemap: :environment do
+    path = Staticky.root_path.join("public", "sitemap.xml")
+    path.write(Sitemap.call)
+    Staticky.logger.info "Generated sitemap at #{path}"
+  end
+
   desc "Build the site and its assets into the Staticky.build_path (./build)"
-  task build: %i[environment build_assets] do
+  task build: %i[environment sitemap build_assets] do
     Staticky.logger.info "Building site in #{Staticky.env.name} environment..."
     Staticky.builder.call
   end

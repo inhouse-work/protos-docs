@@ -37,7 +37,11 @@ module Pages
 
     def view_template
       header(class: "py-md px-sm bg-base-300") do
-        h1 { "Protos Components" }
+        h1 { "Protos UI Components" }
+        p(class: "max-w-2xl mt-xs opacity-80") { Site.description }
+        p(class: "mt-xs") do
+          link_to("View the source on GitHub", Site.repository_url, class: "link")
+        end
       end
       content
     end

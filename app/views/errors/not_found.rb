@@ -4,7 +4,12 @@ module Errors
   class NotFound < ApplicationView
     include Protos::Typography
 
-    def around_template(&block) = Layouts::Error.new(&block)
+    def around_template(&block)
+      render Layouts::Error.new(
+        title: "Page not found | #{Site.name}",
+        &block
+      )
+    end
 
     def view_template
       h1 { "Page not found." }

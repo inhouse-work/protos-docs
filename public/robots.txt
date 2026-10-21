@@ -1,1 +1,7 @@
+User-agent: *
+Allow: /
+
+Disallow: /404.html
+Disallow: /500.html
+
 Sitemap: https://protos.inhouse.work/sitemap.xml
